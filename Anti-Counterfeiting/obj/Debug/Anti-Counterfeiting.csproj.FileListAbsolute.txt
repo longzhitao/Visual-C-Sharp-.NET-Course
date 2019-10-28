@@ -1,0 +1,7 @@
+G:\Code\VS\Anti-Counterfeiting\obj\Debug\Anti-Counterfeiting.csprojAssemblyReference.cache
+G:\Code\VS\Anti-Counterfeiting\obj\Debug\Anti-Counterfeiting.csproj.CoreCompileInputs.cache
+G:\Code\VS\Anti-Counterfeiting\bin\Debug\Anti-Counterfeiting.exe.config
+G:\Code\VS\Anti-Counterfeiting\bin\Debug\Anti-Counterfeiting.exe
+G:\Code\VS\Anti-Counterfeiting\bin\Debug\Anti-Counterfeiting.pdb
+G:\Code\VS\Anti-Counterfeiting\obj\Debug\Anti-Counterfeiting.exe
+G:\Code\VS\Anti-Counterfeiting\obj\Debug\Anti-Counterfeiting.pdb

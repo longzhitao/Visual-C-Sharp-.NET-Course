@@ -1,0 +1,7 @@
+G:\Code\VS\Car\bin\Debug\Car.exe.config
+G:\Code\VS\Car\bin\Debug\Car.exe
+G:\Code\VS\Car\bin\Debug\Car.pdb
+G:\Code\VS\Car\obj\Debug\Car.csprojAssemblyReference.cache
+G:\Code\VS\Car\obj\Debug\Car.csproj.CoreCompileInputs.cache
+G:\Code\VS\Car\obj\Debug\Car.exe
+G:\Code\VS\Car\obj\Debug\Car.pdb

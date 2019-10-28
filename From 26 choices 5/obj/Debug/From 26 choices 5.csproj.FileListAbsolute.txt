@@ -1,0 +1,7 @@
+G:\Code\VS\From 26 choices 5\bin\Debug\From 26 choices 5.exe.config
+G:\Code\VS\From 26 choices 5\bin\Debug\From 26 choices 5.exe
+G:\Code\VS\From 26 choices 5\bin\Debug\From 26 choices 5.pdb
+G:\Code\VS\From 26 choices 5\obj\Debug\From 26 choices 5.csprojAssemblyReference.cache
+G:\Code\VS\From 26 choices 5\obj\Debug\From 26 choices 5.csproj.CoreCompileInputs.cache
+G:\Code\VS\From 26 choices 5\obj\Debug\From 26 choices 5.exe
+G:\Code\VS\From 26 choices 5\obj\Debug\From 26 choices 5.pdb
