@@ -48,13 +48,13 @@
             this.button_4 = new System.Windows.Forms.Button();
             this.button_6 = new System.Windows.Forms.Button();
             this.buttonSin = new System.Windows.Forms.Button();
-            this.button_5 = new System.Windows.Forms.Button();
             this.button_7 = new System.Windows.Forms.Button();
             this.buttonLeftBracket = new System.Windows.Forms.Button();
             this.button_9 = new System.Windows.Forms.Button();
             this.buttonLn = new System.Windows.Forms.Button();
             this.buttonPow = new System.Windows.Forms.Button();
             this.buttonPlus = new System.Windows.Forms.Button();
+            this.button_5 = new System.Windows.Forms.Button();
             this.panelKeyboard = new System.Windows.Forms.Panel();
             this.textBoxInput = new System.Windows.Forms.TextBox();
             this.buttonCalculate = new System.Windows.Forms.Button();
@@ -62,6 +62,7 @@
             this.textBoxRes = new System.Windows.Forms.TextBox();
             this.labelRes = new System.Windows.Forms.Label();
             this.buttonBackspace = new System.Windows.Forms.Button();
+            this.labelInputRes = new System.Windows.Forms.Label();
             this.tableLayoutPanelKeyBoard.SuspendLayout();
             this.panelKeyboard.SuspendLayout();
             this.SuspendLayout();
@@ -87,13 +88,13 @@
             this.tableLayoutPanelKeyBoard.Controls.Add(this.button_4, 2, 1);
             this.tableLayoutPanelKeyBoard.Controls.Add(this.button_6, 0, 1);
             this.tableLayoutPanelKeyBoard.Controls.Add(this.buttonSin, 5, 0);
-            this.tableLayoutPanelKeyBoard.Controls.Add(this.button_5, 1, 1);
             this.tableLayoutPanelKeyBoard.Controls.Add(this.button_7, 0, 0);
             this.tableLayoutPanelKeyBoard.Controls.Add(this.buttonLeftBracket, 4, 0);
             this.tableLayoutPanelKeyBoard.Controls.Add(this.button_9, 2, 0);
             this.tableLayoutPanelKeyBoard.Controls.Add(this.buttonLn, 5, 3);
             this.tableLayoutPanelKeyBoard.Controls.Add(this.buttonPow, 4, 3);
             this.tableLayoutPanelKeyBoard.Controls.Add(this.buttonPlus, 3, 3);
+            this.tableLayoutPanelKeyBoard.Controls.Add(this.button_5, 1, 1);
             this.tableLayoutPanelKeyBoard.Name = "tableLayoutPanelKeyBoard";
             // 
             // button_8
@@ -223,14 +224,6 @@
             this.buttonSin.UseVisualStyleBackColor = true;
             this.buttonSin.Click += new System.EventHandler(this.ButtonSin_Click);
             // 
-            // button_5
-            // 
-            this.button_5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            resources.ApplyResources(this.button_5, "button_5");
-            this.button_5.Name = "button_5";
-            this.button_5.UseVisualStyleBackColor = false;
-            this.button_5.Click += new System.EventHandler(this.Button_5_Click);
-            // 
             // button_7
             // 
             this.button_7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -275,6 +268,14 @@
             this.buttonPlus.UseVisualStyleBackColor = true;
             this.buttonPlus.Click += new System.EventHandler(this.ButtonPlus_Click);
             // 
+            // button_5
+            // 
+            this.button_5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            resources.ApplyResources(this.button_5, "button_5");
+            this.button_5.Name = "button_5";
+            this.button_5.UseVisualStyleBackColor = false;
+            this.button_5.Click += new System.EventHandler(this.Button_5_Click);
+            // 
             // panelKeyboard
             // 
             this.panelKeyboard.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -284,14 +285,17 @@
             // 
             // textBoxInput
             // 
+            this.textBoxInput.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.textBoxInput, "textBoxInput");
+            this.textBoxInput.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxInput.Name = "textBoxInput";
             // 
             // buttonCalculate
             // 
+            this.buttonCalculate.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.buttonCalculate, "buttonCalculate");
             this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.UseVisualStyleBackColor = true;
+            this.buttonCalculate.UseVisualStyleBackColor = false;
             this.buttonCalculate.Click += new System.EventHandler(this.ButtonCalculate_Click);
             // 
             // labelInput
@@ -315,16 +319,23 @@
             // 
             // buttonBackspace
             // 
+            this.buttonBackspace.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.buttonBackspace, "buttonBackspace");
             this.buttonBackspace.Name = "buttonBackspace";
-            this.buttonBackspace.UseVisualStyleBackColor = true;
+            this.buttonBackspace.UseVisualStyleBackColor = false;
             this.buttonBackspace.Click += new System.EventHandler(this.ButtonBackspace_Click);
+            // 
+            // labelInputRes
+            // 
+            resources.ApplyResources(this.labelInputRes, "labelInputRes");
+            this.labelInputRes.Name = "labelInputRes";
             // 
             // formCalculator
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.labelInputRes);
             this.Controls.Add(this.buttonBackspace);
             this.Controls.Add(this.labelRes);
             this.Controls.Add(this.textBoxRes);
@@ -377,6 +388,7 @@
         private System.Windows.Forms.TextBox textBoxRes;
         private System.Windows.Forms.Label labelRes;
         private System.Windows.Forms.Button buttonBackspace;
+        private System.Windows.Forms.Label labelInputRes;
     }
 }
 

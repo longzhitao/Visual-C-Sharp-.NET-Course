@@ -543,30 +543,6 @@
   <data name="&gt;&gt;buttonSin.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="button_5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 57</value>
-  </data>
-  <data name="button_5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 48</value>
-  </data>
-  <data name="button_5.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="button_5.Text" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;button_5.Name" xml:space="preserve">
-    <value>button_5</value>
-  </data>
-  <data name="&gt;&gt;button_5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_5.Parent" xml:space="preserve">
-    <value>tableLayoutPanelKeyBoard</value>
-  </data>
-  <data name="&gt;&gt;button_5.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
   <data name="button_7.Font" type="System.Drawing.Font, System.Drawing">
     <value>宋体, 9pt</value>
   </data>
@@ -592,7 +568,7 @@
     <value>tableLayoutPanelKeyBoard</value>
   </data>
   <data name="&gt;&gt;button_7.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="buttonLeftBracket.Location" type="System.Drawing.Point, System.Drawing">
     <value>365, 3</value>
@@ -616,7 +592,7 @@
     <value>tableLayoutPanelKeyBoard</value>
   </data>
   <data name="&gt;&gt;buttonLeftBracket.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="button_9.Font" type="System.Drawing.Font, System.Drawing">
     <value>宋体, 9pt</value>
@@ -643,7 +619,7 @@
     <value>tableLayoutPanelKeyBoard</value>
   </data>
   <data name="&gt;&gt;button_9.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
   <data name="buttonLn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -670,7 +646,7 @@
     <value>tableLayoutPanelKeyBoard</value>
   </data>
   <data name="&gt;&gt;buttonLn.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>20</value>
   </data>
   <data name="buttonPow.Location" type="System.Drawing.Point, System.Drawing">
     <value>365, 165</value>
@@ -694,7 +670,7 @@
     <value>tableLayoutPanelKeyBoard</value>
   </data>
   <data name="&gt;&gt;buttonPow.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>21</value>
   </data>
   <data name="buttonPlus.Location" type="System.Drawing.Point, System.Drawing">
     <value>274, 165</value>
@@ -718,10 +694,34 @@
     <value>tableLayoutPanelKeyBoard</value>
   </data>
   <data name="&gt;&gt;buttonPlus.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="button_5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 57</value>
+  </data>
+  <data name="button_5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 48</value>
+  </data>
+  <data name="button_5.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="button_5.Text" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;button_5.Name" xml:space="preserve">
+    <value>button_5</value>
+  </data>
+  <data name="&gt;&gt;button_5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_5.Parent" xml:space="preserve">
+    <value>tableLayoutPanelKeyBoard</value>
+  </data>
+  <data name="&gt;&gt;button_5.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
   <data name="tableLayoutPanelKeyBoard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 14</value>
+    <value>38, 12</value>
   </data>
   <data name="tableLayoutPanelKeyBoard.RowCount" type="System.Int32, mscorlib">
     <value>4</value>
@@ -745,13 +745,13 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanelKeyBoard.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="button_8" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonDot" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonDivision" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="button_0" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonTan" Row="2" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="buttonSqrt" Row="2" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="buttonSignTransfer" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonMinus" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="button_1" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="button_2" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonCos" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="buttonTimes" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="buttonRightBracket" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="button_4" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="button_6" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonSin" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="button_5" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_7" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonLeftBracket" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="button_9" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonLn" Row="3" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="buttonPow" Row="3" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="buttonPlus" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,16.66667,Percent,16.66667,Percent,16.43357,Percent,16.78322,Percent,16.66667,Percent,16.66667" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="button_8" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonDot" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonDivision" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="button_0" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonTan" Row="2" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="buttonSqrt" Row="2" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="buttonSignTransfer" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonMinus" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="button_1" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="button_2" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonCos" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="buttonTimes" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="buttonRightBracket" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="button_4" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="button_6" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonSin" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="button_7" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonLeftBracket" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="button_9" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonLn" Row="3" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="buttonPow" Row="3" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="buttonPlus" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="button_5" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,16.66667,Percent,16.66667,Percent,16.43357,Percent,16.78322,Percent,16.66667,Percent,16.66667" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelKeyboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 128</value>
+    <value>0, 146</value>
   </data>
   <data name="panelKeyboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>595, 241</value>
+    <value>618, 241</value>
   </data>
   <data name="panelKeyboard.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -766,19 +766,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelKeyboard.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="textBoxInput.Font" type="System.Drawing.Font, System.Drawing">
     <value>宋体, 10pt</value>
   </data>
   <data name="textBoxInput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 12</value>
+    <value>94, 12</value>
   </data>
   <data name="textBoxInput.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="textBoxInput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 67</value>
+    <value>289, 68</value>
   </data>
   <data name="textBoxInput.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -793,13 +793,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxInput.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="buttonCalculate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>494, 12</value>
+    <value>398, 12</value>
   </data>
   <data name="buttonCalculate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 67</value>
+    <value>90, 68</value>
   </data>
   <data name="buttonCalculate.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -817,7 +817,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonCalculate.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="labelInput.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -826,10 +826,10 @@
     <value>宋体, 9pt</value>
   </data>
   <data name="labelInput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 29</value>
+    <value>21, 12</value>
   </data>
   <data name="labelInput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 18</value>
+    <value>67, 15</value>
   </data>
   <data name="labelInput.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -847,16 +847,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelInput.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="textBoxRes.Font" type="System.Drawing.Font, System.Drawing">
     <value>宋体, 10pt</value>
   </data>
   <data name="textBoxRes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 86</value>
+    <value>94, 86</value>
   </data>
   <data name="textBoxRes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 30</value>
+    <value>289, 27</value>
   </data>
   <data name="textBoxRes.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -871,7 +871,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxRes.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="labelRes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -883,10 +883,10 @@
     <value>NoControl</value>
   </data>
   <data name="labelRes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 89</value>
+    <value>21, 91</value>
   </data>
   <data name="labelRes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 18</value>
+    <value>67, 15</value>
   </data>
   <data name="labelRes.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -904,13 +904,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelRes.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="buttonBackspace.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="buttonBackspace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>494, 86</value>
+    <value>398, 85</value>
   </data>
   <data name="buttonBackspace.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 27</value>
@@ -931,6 +931,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonBackspace.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelInputRes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelInputRes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 10.8pt</value>
+  </data>
+  <data name="labelInputRes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>495, 37</value>
+  </data>
+  <data name="labelInputRes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 19</value>
+  </data>
+  <data name="labelInputRes.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;labelInputRes.Name" xml:space="preserve">
+    <value>labelInputRes</value>
+  </data>
+  <data name="&gt;&gt;labelInputRes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelInputRes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelInputRes.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -944,6 +971,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>619, 386</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Calculator</value>

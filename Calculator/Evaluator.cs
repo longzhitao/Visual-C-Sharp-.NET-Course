@@ -6,11 +6,25 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
+    public delegate Double Caculate(Double x, Double y);
     public class Evaluator
     {
         private List<StringBuilder> infixExpression = new List<StringBuilder>();
         private List<StringBuilder> postfixExpression = new List<StringBuilder>();
+        private Double res;
 
+        private int AppendNumber(StringBuilder builder, String expression, int i)
+        {
+            while ((expression[i] >= '0' && expression[i] <= '9') || expression[i] == '.')
+            {
+                builder.Append(expression[i]);
+                i++;
+                if (i >= expression.Length)
+                    break;
+            }
+            i--;
+            return i;
+        }
         public Evaluator(string expression)
         {
             int index = 0;
@@ -23,9 +37,32 @@ namespace Calculator
                         builder.Append(expression[i]);
                         this.infixExpression.Add(builder);
                         break;
-                    case '-':
-                        builder.Append(expression[i]);
-                        this.infixExpression.Add(builder);
+                    case '-':                                                           //文法
+                        if (i == 0)
+                        {
+                            if (expression[i + 1] >= '0' && expression[i + 1] <= '9')
+                            {
+                                builder.Append('-');
+                                i = this.AppendNumber(builder, expression, i + 1);
+                                this.infixExpression.Add(builder);
+                            }
+                            else
+                            {
+                                builder.Append(expression[i]);
+                                this.infixExpression.Add(builder);
+                            }
+                        }
+                        else if (expression[i - 1] == '(')
+                        {
+                            builder.Append('-');
+                            i = this.AppendNumber(builder, expression, i + 1);
+                            this.infixExpression.Add(builder);
+                        }
+                        else
+                        {
+                            builder.Append(expression[i]);
+                            this.infixExpression.Add(builder);
+                        }
                         break;
                     case '*':
                         builder.Append(expression[i]);
@@ -75,24 +112,95 @@ namespace Calculator
                     case ' ':
                         break;
                     default:
-                        while ((expression[i] >= '0' && expression[i] <= '9') || expression[i] == '.')
-                        {
-                            builder.Append(expression[i]);
-                            i++;
-                            if (i >= expression.Length)
-                                break;
-                        }
-                        i--;
+                        i = this.AppendNumber(builder, expression, i);
                         this.infixExpression.Add(builder);
                         break;
                 }
                 index++;
             }
             this.ConvertToPostfix();
+
+        }
+        public bool Compute()
+        {
+            try
+            {
+                Stack<Double> stack = new Stack<Double>();
+                foreach (StringBuilder parm in this.postfixExpression)
+                {
+                    if (parm[0] >= '0' && parm[0] <= '9')
+                    {
+                        stack.Push(Convert.ToDouble(parm.ToString()));
+                    }
+                    else
+                    {
+                        Double temp;
+                        switch (parm[0])
+                        {
+                            case '+':
+                                temp = stack.Pop();
+                                stack.Push(stack.Pop() + temp);
+                                break;
+                            case '-':
+                                if (parm.Length == 1)
+                                {
+                                    if (stack.Count != 1)
+                                    {
+                                        temp = stack.Pop();
+                                        stack.Push(stack.Pop() - temp);
+                                    }
+                                    else
+                                    {
+                                        stack.Push(Convert.ToDouble(-stack.Pop()));
+                                    }
+                                }
+                                else
+                                {
+                                    stack.Push(Convert.ToDouble(parm.ToString()));
+                                }
+                                break;
+                            case '*':
+                                temp = stack.Pop();
+                                stack.Push(stack.Pop() * temp);
+                                break;
+                            case '/':
+                                temp = stack.Pop();
+                                stack.Push(stack.Pop() / temp);
+                                break;
+                            case '^':
+                                temp = stack.Pop();
+                                stack.Push(Math.Pow(stack.Pop(), temp));
+                                break;
+                            case 's':
+                                stack.Push(Math.Sin(stack.Pop()));
+                                break;
+                            case 'c':
+                                stack.Push(Math.Cos(stack.Pop()));
+                                break;
+                            case 't':
+                                stack.Push(Math.Tan(stack.Pop()));
+                                break;
+                            case 'S':
+                                stack.Push(Math.Sqrt(stack.Pop()));
+                                break;
+                            case 'l':
+                                stack.Push(Math.Log10(stack.Pop()));
+                                break;
+                        }
+                    }
+                }
+                this.res = stack.Pop();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public List<StringBuilder> InfixExpression { get => infixExpression; set => infixExpression = value; }
         public List<StringBuilder> PostfixExpression { get => postfixExpression; set => postfixExpression = value; }
+        public double Res { get => res; set => res = value; }
 
         private int Priority(StringBuilder operator_)
         {
