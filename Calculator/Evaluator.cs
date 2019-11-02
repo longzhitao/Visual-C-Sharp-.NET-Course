@@ -28,22 +28,223 @@ namespace Calculator
         public Evaluator(string expression)
         {
             int index = 0;
-            for (int i = 0; i < expression.Length; i++)
+            try
             {
-                StringBuilder builder = new StringBuilder();
-                switch (expression[i])
+                for (int i = 0; i < expression.Length; i++)
                 {
-                    case '+':
-                        builder.Append(expression[i]);
-                        this.infixExpression.Add(builder);
-                        break;
-                    case '-':                                                           //文法
-                        if (i == 0)
-                        {
-                            if (expression[i + 1] >= '0' && expression[i + 1] <= '9')
+                    StringBuilder builder = new StringBuilder();
+                    switch (expression[i])
+                    {
+                        case '+':
+                            builder.Append(expression[i]);
+                            this.infixExpression.Add(builder);
+                            break;
+                        case '-':
+                            int i_temp = i;
+                            bool flag = true;
+                            if (i != expression.Length - 1)         //判断是否为最后一个字符，如果不是则追加判断
                             {
-                                builder.Append('-');
-                                i = this.AppendNumber(builder, expression, i + 1);
+                                if (expression[i + 1] == '-')       //如果下一个还是为负数，处理多符号情况如 ---3 = -3   --3 = 3 或 +3
+                                {
+                                    int count = 1;
+                                    flag = false;
+                                    i++;
+                                    while (true)
+                                    {
+                                        if (expression[i] == '-')
+                                        {
+                                            count++;
+                                            i++;
+                                        }
+                                        else
+                                        {
+                                            break;
+                                        }
+                                    }
+                                    i--;
+                                    if (count % 2 == 0)             //偶数个负号为正
+                                    {
+                                        if (i_temp == 0)            //解决用户输入中起始多个符号判断越界的问题 --2不加判断则会越界
+                                        {
+                                            i = this.AppendNumber(builder, expression, i + 1);
+                                            this.infixExpression.Add(builder);
+                                        }
+                                        else
+                                        {
+                                            if (this.InfixExpression[this.InfixExpression.Count - 1][0] >= '0'      //越界地方
+                                                && this.InfixExpression[this.InfixExpression.Count - 1][0] <= '9')  //如果出现sin--2 不加此判断会变成
+                                            {                                                                       //sin+2 只需判断上一个中缀表达式数组中
+                                                builder.Append('+');                                                //是否为数字如1--2 是则变成 1+2
+                                                this.infixExpression.Add(builder);                                  //不是数字如sin--2 则移除-- 变成sin2
+                                            }
+                                        }
+
+                                    }
+                                    else                           //奇数个符号为负
+                                    {
+                                        if (i_temp == 0)            //解决用户输入中起始多个符号判断越界的问题 --2不加判断则会越界
+                                        {
+                                            builder.Append('-');
+                                            i = this.AppendNumber(builder, expression, i + 1);
+                                            this.infixExpression.Add(builder);
+                                        }
+                                        else
+                                        {
+                                            if (this.InfixExpression[this.InfixExpression.Count - 1][0] >= '0'      
+                                                && this.InfixExpression[this.InfixExpression.Count - 1][0] <= '9')  
+                                            {                                                                       
+                                                builder.Append('-');                                                
+                                                this.infixExpression.Add(builder);
+                                            }
+                                            else
+                                            {
+                                                if(this.InfixExpression[this.InfixExpression.Count - 1][0] == '^')
+                                                {
+                                                    builder.Append('-');
+                                                    i = this.AppendNumber(builder, expression, i + 1);
+                                                    this.infixExpression.Add(builder);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            if (flag)
+                            {
+                                if (i == 0)                                                                 //特判负号开头的问题
+                                {
+                                    if (expression[i + 1] >= '0' && expression[i + 1] <= '9')               //如果下一个字符为数字
+                                    {                                                                       //则扫描下一个数字并加入数组中
+                                        builder.Append('-');                                                //如-222 则直接加-222
+                                        i = this.AppendNumber(builder, expression, i + 1);
+                                        this.infixExpression.Add(builder);
+                                    }
+                                    else
+                                    {
+                                        builder.Append(expression[i]);                                      
+                                        this.infixExpression.Add(builder);
+                                    }
+                                }
+                                else if (expression[i - 1] == '(')                                         //解决（-200+100）问题
+                                {                                                                          //直接如果是这样则加入 -200 + 100
+                                    builder.Append('-');                                                   //而不是- 200 + 100
+                                    i = this.AppendNumber(builder, expression, i + 1);
+                                    this.infixExpression.Add(builder);
+                                }
+                                else
+                                {                                                                          //特判sin-2 cos-2等问题
+                                    if (this.infixExpression[this.infixExpression.Count - 1][0] == 's' ||
+                                        this.infixExpression[this.infixExpression.Count - 1][0] == 'c' ||
+                                        this.infixExpression[this.infixExpression.Count - 1][0] == 'S' ||
+                                        this.infixExpression[this.infixExpression.Count - 1][0] == 'l' ||
+                                        this.infixExpression[this.infixExpression.Count - 1][0] == '^')
+                                    {
+                                        builder.Append('-');
+                                        i = this.AppendNumber(builder, expression, i + 1);
+                                        this.infixExpression.Add(builder);
+                                    }
+                                    else
+                                    {
+                                        builder.Append(expression[i]);
+                                        this.infixExpression.Add(builder);
+                                    }
+                                }
+
+                            }
+                            break;
+                        case '*':
+                            builder.Append(expression[i]);
+                            this.infixExpression.Add(builder);
+                            break;
+                        case '/':
+                            builder.Append(expression[i]);
+                            this.infixExpression.Add(builder);
+                            break;
+                        case '(':
+                            builder.Append(expression[i]);
+                            this.infixExpression.Add(builder);
+                            break;
+                        case ')':
+                            builder.Append(expression[i]);
+                            this.infixExpression.Add(builder);
+                            break;
+                        case '^':
+                            builder.Append(expression[i]);
+                            this.infixExpression.Add(builder);
+                            break;
+                        case 's':
+                            if (expression[i + 1] == 'i' && expression[i + 2] == 'n')
+                            {
+                                builder = new StringBuilder("sin");
+                                this.infixExpression.Add(builder);
+                                i += 2;
+                            }
+                            else
+                            {
+                                builder.Append(expression[i]);
+                                this.infixExpression.Add(builder);
+                            }
+                            break;
+                        case 'c':
+                            if(expression[i+1] == 'o' && expression[i+2] == 's')
+                            {
+                                builder = new StringBuilder("cos");
+                                this.infixExpression.Add(builder);
+                                i += 2;
+                            }
+                            else
+                            {
+                                builder.Append(expression[i]);
+                                this.infixExpression.Add(builder);
+                            }
+                            break;
+                        case 't':
+                            if (expression[i + 1] == 'a' && expression[i + 2] == 'n')
+                            {
+                                builder = new StringBuilder("tan");
+                                this.infixExpression.Add(builder);
+                                i += 2;
+                            }
+                            else
+                            {
+                                builder.Append(expression[i]);
+                                this.infixExpression.Add(builder);
+                            }
+                            break;
+                        case 'l':
+                            if (expression[i + 1] == 'n')
+                            {
+                                builder = new StringBuilder("ln");
+                                this.infixExpression.Add(builder);
+                                i++;
+                            }
+                            else
+                            {
+                                builder.Append(expression[i]);
+                                this.infixExpression.Add(builder);
+                            }
+                            break;
+                        case 'S':
+                            if (expression[i + 1] == 'q' && expression[i + 2] == 'r' && expression[i + 3] == 't')
+                            {
+                                builder = new StringBuilder("Sqrt");
+                                this.infixExpression.Add(builder);
+                                i += 3;
+                            }
+                            else
+                            {
+                                builder.Append(expression[i]);
+                                this.infixExpression.Add(builder);
+                            }
+                            break;
+                        case ' ':
+                            break;
+                        case '\n':
+                            break;
+                        default:
+                            if (expression[i] >= '0' && expression[i] <= '9')
+                            {
+                                i = this.AppendNumber(builder, expression, i);
                                 this.infixExpression.Add(builder);
                             }
                             else
@@ -51,72 +252,15 @@ namespace Calculator
                                 builder.Append(expression[i]);
                                 this.infixExpression.Add(builder);
                             }
-                        }
-                        else if (expression[i - 1] == '(')
-                        {
-                            builder.Append('-');
-                            i = this.AppendNumber(builder, expression, i + 1);
-                            this.infixExpression.Add(builder);
-                        }
-                        else
-                        {
-                            builder.Append(expression[i]);
-                            this.infixExpression.Add(builder);
-                        }
-                        break;
-                    case '*':
-                        builder.Append(expression[i]);
-                        this.infixExpression.Add(builder);
-                        break;
-                    case '/':
-                        builder.Append(expression[i]);
-                        this.infixExpression.Add(builder);
-                        break;
-                    case '(':
-                        builder.Append(expression[i]);
-                        this.infixExpression.Add(builder);
-                        break;
-                    case ')':
-                        builder.Append(expression[i]);
-                        this.infixExpression.Add(builder);
-                        break;
-                    case '^':
-                        builder.Append(expression[i]);
-                        this.infixExpression.Add(builder);
-                        break;
-                    case 's':
-                        builder = new StringBuilder("sin");
-                        this.infixExpression.Add(builder);
-                        i += 2;
-                        break;
-                    case 'c':
-                        builder = new StringBuilder("sin");
-                        this.infixExpression.Add(builder);
-                        i += 2;
-                        break;
-                    case 't':
-                        builder = new StringBuilder("tan");
-                        this.infixExpression.Add(builder);
-                        i += 2;
-                        break;
-                    case 'l':
-                        builder = new StringBuilder("ln");
-                        this.infixExpression.Add(builder);
-                        i++;
-                        break;
-                    case 'S':
-                        builder = new StringBuilder("Sqrt");
-                        this.infixExpression.Add(builder);
-                        i += 3;
-                        break;
-                    case ' ':
-                        break;
-                    default:
-                        i = this.AppendNumber(builder, expression, i);
-                        this.infixExpression.Add(builder);
-                        break;
+
+                            break;
+                    }
+                    index++;
                 }
-                index++;
+            }
+            catch (Exception)//在保证表达式正确情况下出现越界则抛出异常，用户输入表达式有问题
+            {
+                this.infixExpression.Add(new StringBuilder("Error"));
             }
             this.ConvertToPostfix();
 
@@ -172,27 +316,54 @@ namespace Calculator
                                 stack.Push(Math.Pow(stack.Pop(), temp));
                                 break;
                             case 's':
-                                stack.Push(Math.Sin(stack.Pop()));
+                                if (parm.ToString() == "sin")
+                                    stack.Push(Math.Sin(stack.Pop()));
+                                else
+                                {
+                                    throw new Exception();
+                                }
                                 break;
                             case 'c':
-                                stack.Push(Math.Cos(stack.Pop()));
+                                if (parm.ToString() == "cos")
+                                    stack.Push(Math.Cos(stack.Pop()));
+                                else
+                                {
+                                    throw new Exception();
+                                };
                                 break;
                             case 't':
-                                stack.Push(Math.Tan(stack.Pop()));
+                                if (parm.ToString() == "tan")
+                                    stack.Push(Math.Tan(stack.Pop()));
+                                else
+                                {
+                                    throw new Exception();
+                                };
                                 break;
                             case 'S':
-                                stack.Push(Math.Sqrt(stack.Pop()));
+                                if (parm.ToString() == "Sqrt")
+                                    stack.Push(Math.Sqrt(stack.Pop()));
+                                else
+                                {
+                                    throw new Exception();
+                                };
                                 break;
                             case 'l':
-                                stack.Push(Math.Log10(stack.Pop()));
+                                if (parm.ToString() == "ln")
+                                    stack.Push(Math.Log10(stack.Pop()));
+                                else
+                                {
+                                    throw new Exception();
+                                };
                                 break;
+                            default:
+                                throw new Exception();
                         }
                     }
                 }
                 this.res = stack.Pop();
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -205,6 +376,7 @@ namespace Calculator
         private int Priority(StringBuilder operator_)
         {
             int level;
+
             if (operator_[0] == '(')
                 level = 0;
             else if (operator_[0] == '+' || operator_[0] == '-')
@@ -237,6 +409,7 @@ namespace Calculator
                     while (stack.Count != 0)
                     {
                         temp = stack.Pop();
+
                         if (temp[0] == '(')
                             break;
                         else
@@ -245,6 +418,14 @@ namespace Calculator
                 }
                 else
                 {
+                    if (stringBuilder.Length > 1)
+                    {
+                        if(stringBuilder[1] >= '0' && stringBuilder[1] <= '9')
+                        {
+                            this.postfixExpression.Add(stringBuilder);
+                            continue;
+                        }
+                    }
                     if (stack.Count == 0)
                     {
                         stack.Push(stringBuilder);

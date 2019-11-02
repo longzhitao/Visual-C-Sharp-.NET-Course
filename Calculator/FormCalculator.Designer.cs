@@ -332,6 +332,7 @@
             // 
             // formCalculator
             // 
+            this.AcceptButton = this.buttonCalculate;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
@@ -343,9 +344,13 @@
             this.Controls.Add(this.buttonCalculate);
             this.Controls.Add(this.textBoxInput);
             this.Controls.Add(this.panelKeyboard);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "formCalculator";
             this.Opacity = 0.9D;
+            this.Activated += new System.EventHandler(this.FormCalculator_Activated);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCalculator_KeyDown);
             this.tableLayoutPanelKeyBoard.ResumeLayout(false);
             this.panelKeyboard.ResumeLayout(false);
             this.ResumeLayout(false);

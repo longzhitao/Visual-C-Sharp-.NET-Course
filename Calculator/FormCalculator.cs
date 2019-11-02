@@ -10,15 +10,26 @@ using System.Windows.Forms;
 
 namespace Calculator
 {
+    /// <summary>
+    /// 往TextBox增加内容
+    /// </summary>
+    /// <param name="s">增加的内容 字符串</param>
+    /// <param name="len">字符串长度</param>
     public delegate void ChangeTextBoxText(string s, int len);
     public partial class formCalculator : Form
     {
+        ///
         public ChangeTextBoxText Change_TextBox_Text;
         public Evaluator evaluator;
         public formCalculator()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// 往公式输入里添加内容
+        /// </summary>
+        /// <param name="s">增加的内容 字符串</param>
+        /// <param name="len">字符串长度</param>
         private void Change_InputTextBox_Text(string s, int len)
         {
             int selectionIndex = textBoxInput.SelectionStart;
@@ -26,7 +37,10 @@ namespace Calculator
             textBoxInput.SelectionStart = selectionIndex + len;
             textBoxInput.Focus();
         }
-
+        /// <summary>
+        /// 改变LabelInputRes内容（显示用户在软键盘上的输入）
+        /// </summary>
+        /// <param name="s">用户输入内容</param>
         private void Change_LabelInputRes_Text(string s)
         {
             Change_TextBox_Text = new ChangeTextBoxText(Change_InputTextBox_Text);
@@ -222,10 +236,15 @@ namespace Calculator
             if (evaluator.Compute())
             {
                 this.textBoxRes.Text = evaluator.Res.ToString();
+
             }
             else
             {
-                this.textBoxRes.Text = "无效输入";
+                this.textBoxRes.Text = "无效输入 中缀表达式：";
+                for(int i = 0; i < evaluator.InfixExpression.Count; i++)
+                    this.textBoxRes.Text += evaluator.InfixExpression[i];
+                for (int i = 0; i < evaluator.PostfixExpression.Count; i++)
+                    this.textBoxRes.Text = this.textBoxRes.Text + " " + evaluator.PostfixExpression[i];
             }
         }
 
@@ -244,6 +263,20 @@ namespace Calculator
                     this.labelInputRes.Text = "-" + this.labelInputRes.Text;
                 }
             }
+        }
+
+        private void FormCalculator_KeyDown(object sender, KeyEventArgs e)
+        {
+           switch (e.KeyData){
+                case Keys.D0:
+                    Change_LabelInputRes_Text("1");
+                    break;
+            }
+        }
+
+        private void FormCalculator_Activated(object sender, EventArgs e)
+        {
+            this.textBoxInput.Focus();
         }
     }
 }
